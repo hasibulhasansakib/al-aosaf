@@ -57,14 +57,25 @@
                             <?php endif; ?>
 
                             <div class="aa-ts-actions">
-                                <a href="?add-to-cart=<?php echo esc_attr($product->get_id()); ?>" data-quantity="1" class="aa-ts-btn aa-ts-btn-outline ajax_add_to_cart add_to_cart_button" data-product_id="<?php echo esc_attr($product->get_id()); ?>" data-product_sku="<?php echo esc_attr($product->get_sku()); ?>" aria-label="<?php echo esc_attr($product->add_to_cart_description()); ?>" rel="nofollow">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 20a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-9.8-3.6h11.2a2 2 0 0 0 1.9-1.4l2.4-9.6H6.2M3 3h2.5l1.6 7.2"/></svg>
-                                    Add To Cart
-                                </a>
-                                <a href="<?php echo esc_url(wc_get_checkout_url() . '?add-to-cart=' . $product->get_id()); ?>" class="aa-ts-btn aa-ts-btn-solid">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-                                    Buy now
-                                </a>
+                                <?php if ($product->is_type('variable')): ?>
+                                    <button class="aa-ts-btn aa-ts-btn-outline aa-quick-view-btn" data-product_id="<?php echo esc_attr($product->get_id()); ?>" aria-label="<?php echo esc_attr($product->add_to_cart_description()); ?>">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 20a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-9.8-3.6h11.2a2 2 0 0 0 1.9-1.4l2.4-9.6H6.2M3 3h2.5l1.6 7.2"/></svg>
+                                        Add To Cart
+                                    </button>
+                                    <button class="aa-ts-btn aa-ts-btn-solid aa-quick-view-btn" data-product_id="<?php echo esc_attr($product->get_id()); ?>" data-buy_now="true">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                                        Buy now
+                                    </button>
+                                <?php else: ?>
+                                    <a href="?add-to-cart=<?php echo esc_attr($product->get_id()); ?>" data-quantity="1" class="aa-ts-btn aa-ts-btn-outline ajax_add_to_cart add_to_cart_button" data-product_id="<?php echo esc_attr($product->get_id()); ?>" data-product_sku="<?php echo esc_attr($product->get_sku()); ?>" aria-label="<?php echo esc_attr($product->add_to_cart_description()); ?>" rel="nofollow">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 20a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-9.8-3.6h11.2a2 2 0 0 0 1.9-1.4l2.4-9.6H6.2M3 3h2.5l1.6 7.2"/></svg>
+                                        Add To Cart
+                                    </a>
+                                    <a href="<?php echo esc_url(wc_get_checkout_url() . '?add-to-cart=' . $product->get_id()); ?>" class="aa-ts-btn aa-ts-btn-solid">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                                        Buy now
+                                    </a>
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>

@@ -1,0 +1,194 @@
+.aa-qv-modal {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.aa-qv-modal.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.aa-qv-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+}
+
+.aa-qv-content-wrapper {
+    position: relative;
+    background: #fff;
+    width: 90%;
+    max-width: 900px;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    min-height: 300px;
+}
+
+.aa-qv-modal.is-open .aa-qv-content-wrapper {
+    transform: translateY(0);
+}
+
+.aa-qv-close {
+    position: absolute;
+    top: 15px; right: 15px;
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    background: #f1f5f9;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #64748b;
+    transition: all 0.2s ease;
+}
+
+.aa-qv-close:hover {
+    background: #e2e8f0;
+    color: #0f172a;
+}
+
+.aa-qv-content {
+    padding: 30px;
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+.aa-qv-loader {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.aa-qv-loader .aa-spinner {
+    animation: rotate 2s linear infinite;
+    z-index: 2;
+    width: 50px;
+    height: 50px;
+}
+.aa-qv-loader .aa-spinner .path {
+    stroke: #3b82f6;
+    stroke-linecap: round;
+    animation: dash 1.5s ease-in-out infinite;
+}
+
+@keyframes rotate { 100% { transform: rotate(360deg); } }
+@keyframes dash {
+  0% { stroke-dasharray: 1, 150; stroke-dashoffset: 0; }
+  50% { stroke-dasharray: 90, 150; stroke-dashoffset: -35; }
+  100% { stroke-dasharray: 90, 150; stroke-dashoffset: -124; }
+}
+
+/* Product Layout inside Modal */
+.aa-qv-product {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.aa-qv-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.aa-qv-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+.aa-qv-price {
+    font-size: 20px;
+    color: #3b82f6;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.aa-qv-price del {
+    color: #94a3b8;
+    font-weight: 400;
+    font-size: 16px;
+    margin-right: 8px;
+}
+
+.aa-qv-excerpt {
+    color: #64748b;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.aa-qv-form-wrapper form.cart {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.aa-qv-form-wrapper .variations {
+    width: 100%;
+    margin-bottom: 15px;
+}
+.aa-qv-form-wrapper .variations td {
+    padding-bottom: 10px;
+}
+.aa-qv-form-wrapper .variations label {
+    font-weight: 600;
+    color: #475569;
+}
+.aa-qv-form-wrapper .variations select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    background: #f8fafc;
+}
+
+.aa-qv-form-wrapper .woocommerce-variation-add-to-cart {
+    display: flex;
+    gap: 10px;
+    align-items: stretch;
+}
+
+.aa-qv-form-wrapper .quantity input {
+    width: 60px;
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.aa-qv-form-wrapper button.single_add_to_cart_button {
+    flex: 1;
+    background: #3b82f6;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+.aa-qv-form-wrapper button.single_add_to_cart_button:hover {
+    background: #2563eb;
+}
+
+@media (max-width: 768px) {
+    .aa-qv-product {
+        grid-template-columns: 1fr;
+    }
+}

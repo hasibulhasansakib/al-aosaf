@@ -18,5 +18,8 @@ class ShopModule implements ModuleInterface {
     public function init(): void {
         $shopController = new ShopController();
         $shopController->init();
+
+        $quickViewController = new \Alaosaf\Modules\Shop\Controllers\QuickViewController();
+        $quickViewController->init();
     }
 }
