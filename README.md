@@ -5,7 +5,7 @@
   <p>
     <a href="https://hasibulhasansakib.com/"><img src="https://img.shields.io/badge/Author-Hasibul%20Hasan%20Sakib-blue?style=for-the-badge&logo=wordpress" alt="Author" /></a>
     <a href="https://hasibulhasansakib.com/"><img src="https://img.shields.io/badge/Expertise-WordPress%20%7C%20WooCommerce%20%7C%20Automation-000000?style=for-the-badge" alt="Expertise" /></a>
-    <img src="https://img.shields.io/badge/Clients-50%2B%20Happy%20Clients-success?style=for-the-badge" alt="Clients" />
+    <img src="https://img.shields.io/badge/Experience-Since%202021-success?style=for-the-badge" alt="Experience" />
     <img src="https://img.shields.io/badge/Rating-5.0%20%E2%AD%90%E2%AD%90%E2%AD%90%E2%AD%90%E2%AD%90-yellow?style=for-the-badge" alt="Rating" />
   </p>
 </div>
@@ -28,7 +28,7 @@ The **Al Aosaf Core Framework** is a custom-built, highly optimized WordPress an
 
 This framework is developed and maintained by **[Hasibul Hasan Sakib](https://hasibulhasansakib.com/)**.
 
-> I design and develop high-converting business websites, WooCommerce stores, and smart automation systems for modern brands. Trusted by businesses across the USA, UK, Canada, and Europe.
+> With professional experience since 2021, I design and develop high-converting business websites, WooCommerce stores, and smart automation systems for modern brands. Trusted by numerous businesses globally across the USA, UK, Canada, Europe, and beyond.
 
 ### Need a Premium E-commerce Solution?
 If you are looking for a conversion-focused online store, smart business automation, or a custom WordPress plugin:
