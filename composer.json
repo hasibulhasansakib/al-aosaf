@@ -1,0 +1,16 @@
+{
+    "name": "alaosaf/framework",
+    "description": "Al Aosaf",
+    "type": "wordpress-plugin",
+    "require": {
+        "php": ">=7.4",
+        "mpdf/mpdf": "^8.3",
+        "yahnis-elsts/plugin-update-checker": "^5.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Alaosaf\\": "includes/",
+            "Alaosaf\\Modules\\": "modules/"
+        }
+    }
+}

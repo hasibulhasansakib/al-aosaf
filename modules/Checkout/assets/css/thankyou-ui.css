@@ -1,0 +1,519 @@
+/* Premium Thank You Page UI (Al Aosaf Framework) */
+
+/* 1. Main Container */
+.woocommerce-checkout.woocommerce-order {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px 80px 20px;
+    font-family: inherit;
+}
+
+/* 2. Hide Default WooCommerce Success Message (We use the progress bar) */
+.woocommerce-notice--success,
+.woocommerce-thankyou-order-received,
+p.woocommerce-notice {
+    display: none !important;
+}
+
+/* 3. Order Overview Box (Number, Date, Email, Total) */
+ul.woocommerce-order-overview {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    background: #ffffff !important;
+    border: 1px solid rgba(0,0,0,0.05) !important;
+    border-radius: 16px !important;
+    padding: 25px 30px !important;
+    margin: 40px 0 50px 0 !important;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.04) !important;
+    list-style: none !important;
+}
+ul.woocommerce-order-overview li {
+    flex: 1 1 200px !important;
+    border-right: 1px solid #f3f4f6 !important;
+    padding: 10px 20px !important;
+    margin: 0 !important;
+    text-transform: uppercase !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    color: #9ca3af !important;
+    letter-spacing: 0.5px !important;
+}
+ul.woocommerce-order-overview li:last-child {
+    border-right: none !important;
+}
+ul.woocommerce-order-overview li strong {
+    display: block !important;
+    font-size: 16px !important;
+    color: #111 !important;
+    margin-top: 8px !important;
+    text-transform: none !important;
+    font-weight: 800 !important;
+    letter-spacing: 0 !important;
+}
+
+/* 4. Headings */
+.woocommerce-order h2 {
+    font-size: 24px !important;
+    font-weight: 800 !important;
+    color: #111 !important;
+    margin-top: 40px !important;
+    margin-bottom: 25px !important;
+    border-bottom: 2px solid #f3f4f6 !important;
+    padding-bottom: 12px !important;
+}
+
+/* 5. Order Details Table */
+.woocommerce-order-details {
+    margin-bottom: 50px !important;
+}
+table.woocommerce-table--order-details {
+    background: #ffffff !important;
+    border: 1px solid rgba(0,0,0,0.05) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.04) !important;
+    width: 100% !important;
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+    overflow: hidden !important;
+}
+table.woocommerce-table--order-details th,
+table.woocommerce-table--order-details td {
+    padding: 22px 25px !important;
+    border-bottom: 1px solid #f3f4f6 !important;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+}
+table.woocommerce-table--order-details thead th {
+    background: #f9fafb !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    color: #6b7280 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+}
+table.woocommerce-table--order-details tbody td {
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    color: #111 !important;
+}
+table.woocommerce-table--order-details tbody td.woocommerce-table__product-name a {
+    color: #111 !important;
+    text-decoration: none !important;
+    transition: color 0.3s ease !important;
+}
+table.woocommerce-table--order-details tbody td.woocommerce-table__product-name a:hover {
+    color: #f38624 !important;
+}
+table.woocommerce-table--order-details tbody td.woocommerce-table__product-name strong.product-quantity {
+    color: #9ca3af !important;
+    font-weight: 600 !important;
+    margin-left: 5px !important;
+}
+table.woocommerce-table--order-details tfoot th {
+    background: #ffffff !important;
+    text-align: left !important;
+    color: #6b7280 !important;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+}
+table.woocommerce-table--order-details tfoot td {
+    font-weight: 600 !important;
+    color: #111 !important;
+}
+table.woocommerce-table--order-details tfoot tr:last-child th,
+table.woocommerce-table--order-details tfoot tr:last-child td {
+    border-bottom: none !important;
+}
+/* Specifically target the Total row */
+table.woocommerce-table--order-details tfoot tr:nth-last-child(2) th,
+table.woocommerce-table--order-details tfoot tr:nth-last-child(2) td,
+table.woocommerce-table--order-details tfoot tr.order_total th,
+table.woocommerce-table--order-details tfoot tr.order_total td {
+    font-size: 18px !important;
+    font-weight: 800 !important;
+    color: #111 !important;
+    border-top: 2px solid #e5e7eb !important;
+}
+
+/* 6. Customer Details Section */
+.woocommerce-customer-details address {
+    background: #ffffff !important;
+    border: 1px solid rgba(0,0,0,0.05) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.04) !important;
+    padding: 30px !important;
+    font-style: normal !important;
+    font-size: 15px !important;
+    color: #4b5563 !important;
+    line-height: 1.8 !important;
+}
+.woocommerce-customer-details .col2-set {
+    display: flex !important;
+    gap: 30px !important;
+}
+.woocommerce-customer-details .col-1,
+.woocommerce-customer-details .col-2 {
+    flex: 1 !important;
+    width: 100% !important;
+    float: none !important;
+    padding: 0 !important;
+}
+
+/* 7. Mobile Responsiveness */
+@media (max-width: 768px) {
+    ul.woocommerce-order-overview {
+        flex-direction: column !important;
+        padding: 20px !important;
+    }
+    ul.woocommerce-order-overview li {
+        border-right: none !important;
+        border-bottom: 1px solid #f3f4f6 !important;
+    }
+    ul.woocommerce-order-overview li:last-child {
+        border-bottom: none !important;
+    }
+    .woocommerce-customer-details .col2-set {
+        flex-direction: column !important;
+    }
+}
+
+/* 8. Order Confirmation Notice Box */
+.aa-order-confirmation-notice {
+    background: linear-gradient(135deg, #fff7ed 0%, #ffffff 100%) !important;
+    border: 1px solid #fed7aa !important;
+    border-left: 4px solid #f38624 !important;
+    border-radius: 16px !important;
+    padding: 25px 30px !important;
+    margin: 40px auto 50px auto !important;
+    max-width: 800px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 20px !important;
+    box-shadow: 0 10px 30px rgba(243, 134, 36, 0.08) !important;
+    transform: translateY(0);
+    transition: all 0.3s ease;
+}
+.aa-order-confirmation-notice:hover {
+    box-shadow: 0 15px 40px rgba(243, 134, 36, 0.12) !important;
+    transform: translateY(-2px);
+}
+.aa-notice-icon {
+    flex-shrink: 0 !important;
+    width: 60px !important;
+    height: 60px !important;
+    background: #ffffff !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: #f38624 !important;
+    box-shadow: 0 4px 15px rgba(243, 134, 36, 0.15) !important;
+}
+.aa-notice-icon svg {
+    width: 28px !important;
+    height: 28px !important;
+    animation: ring 2s infinite ease-in-out !important;
+}
+@keyframes ring {
+    0%, 100% { transform: rotate(0deg); }
+    10%, 30%, 50%, 70%, 90% { transform: rotate(-10deg); }
+    20%, 40%, 60%, 80% { transform: rotate(10deg); }
+}
+.aa-notice-text {
+    flex-grow: 1 !important;
+}
+.aa-notice-text h3 {
+    margin: 0 0 8px 0 !important;
+    font-size: 18px !important;
+    font-weight: 800 !important;
+    color: #9a3412 !important; /* Deep burnt orange */
+}
+.aa-notice-text p {
+    margin: 0 !important;
+    font-size: 15px !important;
+    color: #4b5563 !important;
+    line-height: 1.8 !important; /* Increased for pill padding */
+}
+.aa-highlight-text {
+    display: inline-block !important;
+    background: #ffedd5 !important;
+    color: #c2410c !important;
+    font-weight: 800 !important;
+    padding: 2px 8px !important;
+    border-radius: 6px !important;
+    margin: 0 2px !important;
+    animation: textGlowPulse 2s infinite alternate ease-in-out !important;
+}
+@keyframes textGlowPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.4);
+        transform: scale(1);
+    }
+    100% {
+        box-shadow: 0 0 0 6px rgba(249, 115, 22, 0);
+        transform: scale(1.02);
+    }
+}
+@media (max-width: 768px) {
+    .aa-order-confirmation-notice {
+        flex-direction: column !important;
+        text-align: center !important;
+        padding: 25px 20px !important;
+    }
+    .aa-notice-icon {
+        margin-bottom: 10px !important;
+    }
+}
+
+/* 9. Invoice Download Button */
+.aa-invoice-download-wrapper {
+    display: flex !important;
+    justify-content: flex-end !important;
+    margin-bottom: -15px !important; /* Pull up slightly over order details */
+    position: relative !important;
+    z-index: 10 !important;
+}
+.aa-btn-download-invoice {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    background: #111 !important;
+    color: #fff !important;
+    padding: 10px 20px !important;
+    border-radius: 8px !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important;
+    transition: all 0.3s ease !important;
+}
+.aa-btn-download-invoice:hover {
+    background: #f38624 !important;
+    color: #fff !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(243, 134, 36, 0.2) !important;
+}
+
+/* 10. Hide Ugly Payment Instructions & Notices */
+.woocommerce-order > p:not(.woocommerce-notice) {
+    display: none !important;
+}
+.woocommerce-order > section.woocommerce-bacs-bank-details,
+.woocommerce-order > section.woocommerce-customer-details ~ p {
+    display: none !important;
+}
+
+/* 11. Ultra Minimal Premium Look (Hide verbose details) */
+ul.woocommerce-order-overview,
+.woocommerce-order-details,
+.woocommerce-customer-details {
+    display: none !important;
+}
+
+/* 12. Premium Receipt Card Design */
+.aa-premium-receipt-wrapper {
+    background: #ffffff !important;
+    border: 1px solid rgba(0,0,0,0.06) !important;
+    border-radius: 24px !important;
+    padding: 40px 50px !important;
+    margin: 40px auto 30px auto !important;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.04) !important;
+    max-width: 800px;
+}
+
+/* Overview Row */
+.aa-overview-list {
+    display: flex !important;
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    gap: 15px !important;
+}
+.aa-overview-item {
+    flex: 1 !important;
+    border-right: 1px dashed #e5e7eb !important;
+    padding-right: 15px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    gap: 6px !important;
+}
+.aa-overview-item:last-child {
+    border-right: none !important;
+    padding-right: 0 !important;
+}
+.aa-overview-item span:first-child {
+    display: block !important;
+    font-size: 13px !important;
+    color: #6b7280 !important;
+    text-transform: capitalize !important;
+    font-weight: 600 !important;
+    margin-bottom: 0 !important;
+}
+.aa-overview-item strong {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: baseline !important;
+    gap: 4px !important;
+    font-size: 16px !important;
+    color: #111 !important;
+    font-weight: 800 !important;
+    white-space: nowrap !important;
+}
+.aa-overview-item strong * {
+    display: inline-flex !important;
+    font-size: inherit !important;
+    color: inherit !important;
+    font-weight: inherit !important;
+    vertical-align: baseline !important;
+    white-space: nowrap !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Delivery Address Card */
+.aa-delivery-card {
+    display: flex !important;
+    align-items: flex-start !important;
+    background: #f9fafb !important;
+    border-radius: 16px !important;
+    padding: 20px 25px !important;
+    margin-bottom: 40px !important;
+    gap: 15px !important;
+    border: 1px solid #f3f4f6 !important;
+}
+.aa-delivery-icon {
+    background: #fff7ed !important;
+    color: #f38624 !important;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+    box-shadow: 0 4px 10px rgba(243, 134, 36, 0.1) !important;
+}
+.aa-delivery-info span {
+    display: block !important;
+    font-size: 13px !important;
+    color: #6b7280 !important;
+    font-weight: 700 !important;
+    margin-bottom: 4px !important;
+}
+.aa-delivery-info address {
+    font-style: normal !important;
+    font-size: 15px !important;
+    color: #111 !important;
+    line-height: 1.5 !important;
+    font-weight: 500 !important;
+    margin: 0 !important;
+}
+
+/* Order Details Table */
+.aa-order-details-title {
+    font-size: 18px !important;
+    font-weight: 800 !important;
+    color: #111 !important;
+    margin: 0 0 15px 0 !important;
+}
+.aa-custom-order-table table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+}
+.aa-custom-order-table th {
+    font-size: 13px !important;
+    color: #9ca3af !important;
+    font-weight: 600 !important;
+    padding: 10px 0 !important;
+    border-bottom: 1px solid #f3f4f6 !important;
+    text-align: left !important;
+}
+.aa-custom-order-table td {
+    padding: 15px 0 !important;
+    border-bottom: 1px solid #f3f4f6 !important;
+    font-size: 15px !important;
+    color: #111 !important;
+    font-weight: 600 !important;
+}
+.aa-custom-order-table .product-total {
+    text-align: right !important;
+}
+.aa-qty-pill {
+    display: inline-block !important;
+    background: #fff7ed !important;
+    color: #f38624 !important;
+    font-size: 12px !important;
+    font-weight: 800 !important;
+    padding: 2px 8px !important;
+    border-radius: 20px !important;
+    margin-left: 8px !important;
+    vertical-align: middle !important;
+}
+.aa-custom-order-table tfoot .aa-sub-row th,
+.aa-custom-order-table tfoot .aa-sub-row td {
+    color: #6b7280 !important;
+    font-weight: 500 !important;
+    border-bottom: none !important;
+    padding: 10px 0 !important;
+}
+.aa-custom-order-table tfoot .aa-sub-row:first-child th,
+.aa-custom-order-table tfoot .aa-sub-row:first-child td {
+    padding-top: 20px !important;
+}
+.aa-custom-order-table .aa-total-row th,
+.aa-custom-order-table .aa-total-row td {
+    font-size: 18px !important;
+    color: #111 !important;
+    font-weight: 800 !important;
+    border-top: 2px dashed #e5e7eb !important;
+    padding-top: 15px !important;
+    margin-top: 5px !important;
+}
+
+@media (max-width: 768px) {
+    .aa-premium-receipt-wrapper {
+        padding: 25px 20px !important;
+        border-radius: 20px !important;
+    }
+    .aa-overview-list {
+        flex-direction: column !important;
+        gap: 0 !important;
+    }
+    .aa-overview-item {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        border-right: none !important;
+        padding-right: 0 !important;
+        border-bottom: 1px dashed #e5e7eb !important;
+        padding: 15px 0 !important;
+    }
+    .aa-overview-item:last-child {
+        border-bottom: none !important;
+        padding-bottom: 0 !important;
+    }
+    .aa-overview-item span:first-child {
+        margin-bottom: 0 !important;
+    }
+    .aa-overview-item strong {
+        text-align: right !important;
+    }
+}
+
+/* Adjust Invoice button to be centered nicely under the new card */
+.aa-invoice-download-wrapper {
+    display: flex !important;
+    justify-content: center !important;
+    margin-top: -15px !important;
+    margin-bottom: 40px !important;
+    position: relative !important;
+    z-index: 10 !important;
+}
+.aa-btn-download-invoice {
+    padding: 14px 30px !important;
+    font-size: 16px !important;
+    border-radius: 12px !important;
+}

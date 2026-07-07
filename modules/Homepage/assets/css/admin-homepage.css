@@ -1,0 +1,88 @@
+/* =========================================
+   Homepage Settings Admin CSS
+   ========================================= */
+
+.aa-settings-header {
+    background: #1d2327;
+    color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.aa-settings-header h1 {
+    color: #fff;
+    margin: 0 0 10px 0;
+    font-size: 24px;
+}
+
+.aa-settings-header p {
+    margin: 0;
+    font-size: 14px;
+    color: #a7b1c2;
+}
+
+/* Premium Tabs UI */
+.aa-settings-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #e2e4e7;
+    padding-bottom: 10px;
+}
+
+.aa-settings-tabs .aa-tab {
+    display: inline-block;
+    padding: 12px 24px;
+    background: #ffffff;
+    color: #50575e;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 8px;
+    border: 1px solid #c3c4c7;
+    transition: all 0.3s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.aa-settings-tabs .aa-tab:hover {
+    background: #f0f0f1;
+    color: #1d2327;
+    border-color: #8c8f94;
+}
+
+.aa-settings-tabs .aa-tab.active {
+    background: var(--aa-primary, #C8A15A);
+    color: #ffffff;
+    border-color: var(--aa-primary, #C8A15A);
+    box-shadow: 0 4px 10px rgba(200, 161, 90, 0.3);
+}
+
+/* Card UI */
+.aa-card {
+    background: #fff;
+    border: 1px solid #c3c4c7;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+    margin-bottom: 25px;
+}
+
+.aa-card h2 {
+    margin-top: 0;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f0f0f1;
+    font-size: 18px;
+}
+
+.aa-settings-footer {
+    margin-top: 30px;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #c3c4c7;
+    border-radius: 8px;
+    display: flex;
+    justify-content: flex-end;
+}
