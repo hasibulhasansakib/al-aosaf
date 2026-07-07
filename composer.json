@@ -1,7 +1,15 @@
 {
     "name": "alaosaf/framework",
-    "description": "Al Aosaf",
+    "description": "The core business system and custom framework.",
     "type": "wordpress-plugin",
+    "keywords": ["wordpress", "woocommerce", "ecommerce", "custom-plugin", "automation"],
+    "authors": [
+        {
+            "name": "Hasibul Hasan Sakib",
+            "homepage": "https://hasibulhasansakib.com/",
+            "role": "Lead Developer"
+        }
+    ],
     "require": {
         "php": ">=7.4",
         "mpdf/mpdf": "^8.3",
