@@ -18,35 +18,36 @@
 .aa-qv-overlay {
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(4px);
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(5px);
 }
 
 .aa-qv-content-wrapper {
     position: relative;
-    background: #fff;
+    background: #ffffff;
     width: 90%;
-    max-width: 900px;
-    border-radius: 12px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-    transform: translateY(20px);
-    transition: all 0.3s ease;
+    max-width: 420px;
+    border-radius: 16px;
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+    transform: translateY(20px) scale(0.95);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     overflow: hidden;
-    min-height: 300px;
+    min-height: 120px;
 }
 
 .aa-qv-modal.is-open .aa-qv-content-wrapper {
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
 }
 
 .aa-qv-close {
     position: absolute;
-    top: 15px; right: 15px;
-    width: 30px; height: 30px;
+    top: 12px; right: 12px;
+    width: 28px; height: 28px;
     border-radius: 50%;
     background: #f1f5f9;
     border: none;
-    font-size: 20px;
+    font-size: 18px;
+    line-height: 1;
     cursor: pointer;
     z-index: 10;
     display: flex;
@@ -62,7 +63,7 @@
 }
 
 .aa-qv-content {
-    padding: 30px;
+    padding: 24px;
     max-height: 85vh;
     overflow-y: auto;
 }
@@ -76,11 +77,11 @@
 .aa-qv-loader .aa-spinner {
     animation: rotate 2s linear infinite;
     z-index: 2;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
 }
 .aa-qv-loader .aa-spinner .path {
-    stroke: #3b82f6;
+    stroke: #f97316;
     stroke-linecap: round;
     animation: dash 1.5s ease-in-out infinite;
 }
@@ -92,103 +93,153 @@
   100% { stroke-dasharray: 90, 150; stroke-dashoffset: -124; }
 }
 
-/* Product Layout inside Modal */
-.aa-qv-product {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
+/* Compact Product Layout */
+.aa-qv-compact-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #f1f5f9;
 }
 
-.aa-qv-image img {
-    width: 100%;
-    height: auto;
+.aa-qv-compact-img {
+    width: 70px;
+    height: 70px;
+    flex-shrink: 0;
     border-radius: 8px;
+    overflow: hidden;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+}
+
+.aa-qv-compact-img img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
-.aa-qv-title {
-    font-size: 24px;
-    font-weight: 700;
+.aa-qv-compact-title {
+    font-size: 16px;
+    font-weight: 600;
     color: #1e293b;
-    margin-bottom: 10px;
-    margin-top: 0;
+    margin: 0 0 4px 0;
+    line-height: 1.3;
+    padding-right: 20px; /* Space for close btn */
 }
 
-.aa-qv-price {
-    font-size: 20px;
-    color: #3b82f6;
-    font-weight: 600;
-    margin-bottom: 15px;
+.aa-qv-compact-price {
+    font-size: 15px;
+    color: #f97316;
+    font-weight: 700;
 }
-.aa-qv-price del {
+.aa-qv-compact-price del {
     color: #94a3b8;
     font-weight: 400;
-    font-size: 16px;
-    margin-right: 8px;
+    font-size: 13px;
+    margin-right: 6px;
 }
 
-.aa-qv-excerpt {
-    color: #64748b;
-    font-size: 15px;
-    line-height: 1.6;
-    margin-bottom: 25px;
-}
-
+/* Form Styles */
 .aa-qv-form-wrapper form.cart {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+    margin: 0;
+    padding: 0;
 }
 
 .aa-qv-form-wrapper .variations {
     width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: 16px;
 }
+.aa-qv-form-wrapper .variations th, 
 .aa-qv-form-wrapper .variations td {
-    padding-bottom: 10px;
+    padding: 0 0 10px 0;
+    display: block;
+    border: none;
 }
 .aa-qv-form-wrapper .variations label {
     font-weight: 600;
     color: #475569;
-}
-.aa-qv-form-wrapper .variations select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #cbd5e1;
-    border-radius: 6px;
-    background: #f8fafc;
+    font-size: 14px;
+    margin-bottom: 6px;
+    display: inline-block;
 }
 
+/* Swatches styling */
+.aa-qv-swatches {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.aa-qv-swatch-btn {
+    padding: 6px 14px;
+    border: 1px solid #cbd5e1;
+    background: #fff;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #475569;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.aa-qv-swatch-btn:hover {
+    border-color: #94a3b8;
+    background: #f8fafc;
+}
+.aa-qv-swatch-btn.selected {
+    border-color: #f97316;
+    background: #fff7ed;
+    color: #ea580c;
+    box-shadow: 0 0 0 1px #f97316;
+}
+
+/* Quantity & Button */
 .aa-qv-form-wrapper .woocommerce-variation-add-to-cart {
     display: flex;
-    gap: 10px;
+    gap: 12px;
     align-items: stretch;
+    margin-top: 20px;
+}
+
+.aa-qv-form-wrapper .quantity {
+    margin: 0 !important;
 }
 
 .aa-qv-form-wrapper .quantity input {
-    width: 60px;
-    padding: 10px;
+    width: 65px;
+    height: 44px;
+    padding: 0;
     border: 1px solid #cbd5e1;
-    border-radius: 6px;
+    border-radius: 8px;
     text-align: center;
+    font-weight: 600;
+    color: #1e293b;
+    background: #f8fafc;
 }
 
 .aa-qv-form-wrapper button.single_add_to_cart_button {
     flex: 1;
+    height: 44px;
     background: #3b82f6;
     color: #fff;
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
     font-weight: 600;
+    font-size: 15px;
     cursor: pointer;
-    transition: background 0.2s ease;
+    transition: transform 0.1s ease, filter 0.2s ease;
 }
 .aa-qv-form-wrapper button.single_add_to_cart_button:hover {
-    background: #2563eb;
+    filter: brightness(1.1);
+}
+.aa-qv-form-wrapper button.single_add_to_cart_button:active {
+    transform: scale(0.98);
 }
 
-@media (max-width: 768px) {
-    .aa-qv-product {
-        grid-template-columns: 1fr;
-    }
+/* Hide unwanted elements */
+.aa-qv-modal .aa-buy-now-btn,
+.aa-qv-modal .aa-sp-help-section,
+.aa-qv-modal .product_meta,
+.aa-qv-modal .woocommerce-share,
+.aa-qv-modal .reset_variations {
+    display: none !important;
 }

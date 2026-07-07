@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Al Aosaf
  * Description: The core business system.
- * Version: 1.1.2
+ * Version: 1.2.0
  * Author: Hasibul Hasan Sakib
  * Text Domain: al-aosaf
  */
@@ -14,7 +14,7 @@ if (!defined('ABSPATH')) {
 }
 
 // Immutable Identifiers Constants
-define('AA_VERSION', '1.1.2');
+define('AA_VERSION', '1.2.0');
 define('AA_PLUGIN_FILE', __FILE__);
 define('AA_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('AA_PLUGIN_URL', plugin_dir_url(__FILE__));

@@ -26,7 +26,6 @@ class QuickViewController {
         $product_id = intval($_POST['product_id']);
         global $post, $product;
         
-        // Setup global post to make WooCommerce template functions work correctly
         $post = get_post($product_id);
         setup_postdata($post);
         $product = wc_get_product($product_id);
@@ -37,21 +36,21 @@ class QuickViewController {
 
         ob_start();
         ?>
-        <div class="aa-qv-product">
-            <div class="aa-qv-image">
-                <?php echo $product->get_image('woocommerce_single'); ?>
-            </div>
-            <div class="aa-qv-details">
-                <h2 class="aa-qv-title"><?php echo $product->get_name(); ?></h2>
-                <div class="aa-qv-price"><?php echo $product->get_price_html(); ?></div>
-                <div class="aa-qv-excerpt"><?php echo apply_filters('woocommerce_short_description', $product->get_short_description()); ?></div>
-                
-                <div class="aa-qv-form-wrapper">
-                    <?php 
-                    // Render the form based on product type
-                    woocommerce_template_single_add_to_cart();
-                    ?>
+        <div class="aa-qv-compact-product">
+            <div class="aa-qv-compact-header">
+                <div class="aa-qv-compact-img">
+                    <?php echo $product->get_image('thumbnail'); ?>
                 </div>
+                <div class="aa-qv-compact-info">
+                    <h3 class="aa-qv-compact-title"><?php echo $product->get_name(); ?></h3>
+                    <div class="aa-qv-compact-price"><?php echo $product->get_price_html(); ?></div>
+                </div>
+            </div>
+            <div class="aa-qv-form-wrapper">
+                <?php 
+                // Render the form based on product type
+                woocommerce_template_single_add_to_cart();
+                ?>
             </div>
         </div>
         <?php
