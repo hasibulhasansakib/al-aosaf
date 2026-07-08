@@ -16,7 +16,7 @@ class ShopController {
     }
 
     public function overrideTemplate($template) {
-        if (is_shop() || is_product_category() || is_product_tag() || is_tax('product_brand')) {
+        if (function_exists('is_shop') && (is_shop() || is_product_category() || is_product_tag() || is_tax('product_brand'))) {
             $custom_template = AA_PLUGIN_DIR . 'modules/Shop/Views/frontend/shop.php';
             if (file_exists($custom_template)) {
                 return $custom_template;
@@ -26,7 +26,7 @@ class ShopController {
     }
 
     public function enqueueAssets() {
-        if (is_shop() || is_product_category() || is_product_tag() || is_tax('product_brand')) {
+        if (function_exists('is_shop') && (is_shop() || is_product_category() || is_product_tag() || is_tax('product_brand'))) {
             wp_enqueue_script('jquery-ui-slider');
             wp_enqueue_script('wc-jquery-ui-touchpunch'); // For mobile touch support on sliders
 
