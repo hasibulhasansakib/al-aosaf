@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Al Aosaf
  * Description: The core business system.
- * Version: 1.2.1
+ * Version: 1.2.2
  * Author: Hasibul Hasan Sakib
  * Text Domain: al-aosaf
  */
@@ -14,7 +14,7 @@ if (!defined('ABSPATH')) {
 }
 
 // Immutable Identifiers Constants
-define('AA_VERSION', '1.2.1');
+define('AA_VERSION', '1.2.2');
 define('AA_PLUGIN_FILE', __FILE__);
 define('AA_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('AA_PLUGIN_URL', plugin_dir_url(__FILE__));
@@ -34,18 +34,11 @@ add_filter('plugin_action_links_woocommerce/woocommerce.php', function($actions)
 
 // Bootstrap the framework
 add_action('plugins_loaded', function () {
-    // Fail-Safe: Halt core modules if WooCommerce is missing
+    // Fail-Safe: Show notice if WooCommerce is missing
     if (!class_exists('WooCommerce')) {
         add_action('admin_notices', function() {
-            echo '<div class="notice notice-error"><p><strong>Al Aosaf Framework:</strong> WooCommerce is missing or deactivated. Core modules have been safely suspended to prevent site crashes.</p></div>';
+            echo '<div class="notice notice-error"><p><strong>Al Aosaf Framework:</strong> WooCommerce is missing or deactivated. Shop features have been hidden to prevent site crashes, but the core design remains active.</p></div>';
         });
-        
-        // Register dummy shortcodes so the frontend remains clean (blank) instead of showing raw [tags]
-        $shortcodes = ['aa_custom_dashboard', 'aa_home_hero', 'aa_home_categories', 'aa_home_top_selling', 'aa_dynamic_slider'];
-        foreach ($shortcodes as $tag) {
-            add_shortcode($tag, '__return_empty_string');
-        }
-        return; 
     }
 
     if (class_exists(\Alaosaf\Core\Framework::class)) {

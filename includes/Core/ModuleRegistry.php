@@ -29,13 +29,19 @@ class ModuleRegistry {
         $activeModules[] = \Alaosaf\Modules\Header\HeaderModule::class;
         $activeModules[] = \Alaosaf\Modules\Footer\FooterModule::class;
         $activeModules[] = \Alaosaf\Modules\Homepage\HomepageModule::class;
-        $activeModules[] = \Alaosaf\Modules\Shop\ShopModule::class;
-        $activeModules[] = \Alaosaf\Modules\Cart\CartModule::class;
-        $activeModules[] = \Alaosaf\Modules\Checkout\CheckoutProgressModule::class;
-        $activeModules[] = \Alaosaf\Modules\Account\AccountModule::class;
-        $activeModules[] = \Alaosaf\Modules\Wishlist\WishlistModule::class;
-        $activeModules[] = \Alaosaf\Modules\SingleProduct\SingleProductModule::class;
-        $activeModules[] = \Alaosaf\Modules\Invoice\InvoiceModule::class;
+        
+        if (class_exists('WooCommerce')) {
+            $activeModules[] = \Alaosaf\Modules\Shop\ShopModule::class;
+            $activeModules[] = \Alaosaf\Modules\Cart\CartModule::class;
+            $activeModules[] = \Alaosaf\Modules\Checkout\CheckoutProgressModule::class;
+            $activeModules[] = \Alaosaf\Modules\Account\AccountModule::class;
+            $activeModules[] = \Alaosaf\Modules\Wishlist\WishlistModule::class;
+            $activeModules[] = \Alaosaf\Modules\SingleProduct\SingleProductModule::class;
+            $activeModules[] = \Alaosaf\Modules\Invoice\InvoiceModule::class;
+        } else {
+            // Mock Account shortcode to output blank
+            add_shortcode('aa_custom_dashboard', '__return_empty_string');
+        }
         
         foreach ($activeModules as $moduleClass) {
             if (class_exists($moduleClass) && is_subclass_of($moduleClass, ModuleInterface::class)) {
