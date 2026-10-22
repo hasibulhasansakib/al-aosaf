@@ -12,8 +12,8 @@ if (!defined('ABSPATH')) exit;
     <div class="aa-value-prop-item">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
         <div class="aa-prop-text">
-            <strong><?php _e('Easy Returns', 'al-aosaf'); ?></strong>
-            <span><?php _e('30-day return', 'al-aosaf'); ?></span>
+            <strong><?php _e('Cash on Delivery', 'al-aosaf'); ?></strong>
+            <span><?php _e('Pay on delivery', 'al-aosaf'); ?></span>
         </div>
     </div>
     <div class="aa-value-prop-item">
