@@ -74,8 +74,15 @@ $inWishlist = class_exists('\Alaosaf\Modules\Wishlist\WishlistModule') && \Alaos
                     <?php echo $this->img($aid, 'thumbnail', ['alt' => '', 'sizes' => '40px']); ?>
                 </button>
             <?php endforeach; ?>
-            <?php if (count($photos) > $dockMax) : ?>
-                <a class="at-dock__more" href="<?php echo esc_url($url); ?>" aria-label="সব ছবি দেখুন">+<?php echo esc_html($this->bn((string) (count($photos) - $dockMax))); ?></a>
+            <?php if (count($photos) > $dockMax - 1) :
+                // Phones show one small photo less, so the "+N" count differs per screen size.
+                $restDesk = count($photos) - $dockMax;
+                $restPhone = count($photos) - ($dockMax - 1);
+            ?>
+                <a class="at-dock__more<?php echo $restDesk > 0 ? '' : ' is-phone-only'; ?>" href="<?php echo esc_url($url); ?>" aria-label="সব ছবি দেখুন">
+                    <?php if ($restDesk > 0) : ?><span class="at-dock__n-desk">+<?php echo esc_html($this->bn((string) $restDesk)); ?></span><?php endif; ?>
+                    <span class="at-dock__n-phone">+<?php echo esc_html($this->bn((string) $restPhone)); ?></span>
+                </a>
             <?php endif; ?>
         </div>
         <?php endif; ?>
