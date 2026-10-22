@@ -38,6 +38,7 @@ class ModuleRegistry {
             $activeModules[] = \Alaosaf\Modules\Wishlist\WishlistModule::class;
             $activeModules[] = \Alaosaf\Modules\SingleProduct\SingleProductModule::class;
             $activeModules[] = \Alaosaf\Modules\Invoice\InvoiceModule::class;
+            $activeModules[] = \Alaosaf\Modules\Atelier\AtelierModule::class;
         } else {
             // Mock Account shortcode to output blank
             add_shortcode('aa_custom_dashboard', '__return_empty_string');
