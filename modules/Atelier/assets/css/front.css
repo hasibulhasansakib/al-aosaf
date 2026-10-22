@@ -35,7 +35,8 @@ body.at-palette {
     --aa-border: rgba(201, 169, 110, .16);
     background: #0E0D0B;
 }
-body.at-page { overflow-x: clip; }
+/* The header drawers are 100vw wide and sit off-screen; never let them widen the page. */
+html:has(body.at-page), body.at-page { overflow-x: clip; }
 .elementor .at-root { width: 100vw; margin-left: calc(50% - 50vw); }
 
 .at-root {
