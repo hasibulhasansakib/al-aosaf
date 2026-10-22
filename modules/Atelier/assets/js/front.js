@@ -121,7 +121,7 @@
         // Drag with the mouse on desktop.
         var down = false, sx = 0, sl = 0, moved = false;
         track.addEventListener('pointerdown', function (e) {
-            if (e.pointerType !== 'mouse' || e.target.closest('button, .at-card__actions')) return;
+            if (e.pointerType !== 'mouse' || e.target.closest('button, .at-card__actions, .at-dock')) return;
             down = true; moved = false; sx = e.clientX; sl = track.scrollLeft;
         });
         window.addEventListener('pointermove', function (e) {
@@ -209,6 +209,44 @@
         document.addEventListener('click', function (e) { if (!e.target.closest('.at-spot')) open(-1, false); });
     }
 
+    /* ---------- product card film dock ---------- */
+    function cards(root) {
+        var hover = window.matchMedia('(hover: hover)').matches;
+        function show(t) {
+            var card = t.closest('[data-card]'), img = card && card.querySelector('[data-main]');
+            if (!img || t.classList.contains('is-on')) return;
+            card.querySelectorAll('.at-dock__t').forEach(function (b) { b.classList.toggle('is-on', b === t); });
+            var src = t.getAttribute('data-src'), set = t.getAttribute('data-srcset');
+            var pre = new Image();
+            // "auto" sizes only works for images in the page; give the preloader the real card width.
+            if (set) { pre.sizes = Math.ceil(img.getBoundingClientRect().width || 300) + 'px'; pre.srcset = set; }
+            pre.src = src;
+            img.classList.add('is-swapping');
+            var swap = function () {
+                if (!t.classList.contains('is-on')) return; // another photo was chosen meanwhile
+                if (set) img.srcset = set; else img.removeAttribute('srcset');
+                img.src = src;
+                img.classList.remove('is-swapping');
+            };
+            if (pre.decode) pre.decode().then(swap, swap); else pre.onload = swap;
+        }
+        root.addEventListener('click', function (e) {
+            var t = e.target.closest('.at-dock__t');
+            if (t) { e.preventDefault(); show(t); }
+        });
+        if (!hover) return;
+        root.addEventListener('mouseover', function (e) {
+            var t = e.target.closest('.at-dock__t');
+            if (t) show(t);
+        });
+        root.querySelectorAll('[data-card]').forEach(function (card) {
+            card.addEventListener('mouseleave', function () {
+                var first = card.querySelector('.at-dock__t');
+                if (first) show(first);
+            });
+        });
+    }
+
     /* ---------- reveal on scroll ---------- */
     function reveal(root) {
         var els = root.querySelectorAll('[data-reveal]');
@@ -234,6 +272,7 @@
             root.querySelectorAll('[data-tabs]').forEach(tabs);
             root.querySelectorAll('.at-count[data-ends]').forEach(countdown);
             root.querySelectorAll('[data-look]').forEach(look);
+            cards(root);
             reveal(root);
         });
     });
