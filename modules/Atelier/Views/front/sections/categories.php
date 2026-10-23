@@ -1,5 +1,9 @@
 <?php
-/** @var array $d @var \Alaosaf\Modules\Atelier\AtelierView $v */
+/**
+ * Category boxes: equal photo boxes with the name in the middle.
+ *
+ * @var array $d @var \Alaosaf\Modules\Atelier\AtelierView $v
+ */
 if (!defined('ABSPATH')) exit;
 $tiles = [];
 foreach ($d['items'] as $it) {
@@ -15,16 +19,16 @@ foreach ($d['items'] as $it) {
 }
 if (!$tiles) return;
 $v->heading($d);
+$n = count($tiles);
 ?>
-<div class="at-bento at-bento--<?php echo count($tiles); ?>">
-    <?php foreach ($tiles as $i => $t) : ?>
-    <a class="at-tile" href="<?php echo esc_url($t['url']); ?>" data-reveal>
-        <span class="at-tile__media"><?php echo $v->img((int) $t['image'], $i === 0 ? 'full' : 'large', ['class' => 'at-tile__img', 'alt' => $t['label'], 'sizes' => $i === 0 ? '(max-width: 860px) 80vw, 50vw' : '(max-width: 860px) 70vw, 25vw']); ?></span>
-        <span class="at-tile__cap">
-            <span class="at-tile__idx"><?php echo esc_html($v->bn(str_pad((string) ($i + 1), 2, '0', STR_PAD_LEFT))); ?></span>
-            <span class="at-tile__name"><?php echo esc_html($t['label']); ?></span>
-            <?php if ($t['note'] !== '') : ?><span class="at-tile__note"><?php echo esc_html($t['note']); ?></span><?php endif; ?>
-            <span class="at-tile__go">দেখুন <?php echo $v->icon('arrow'); ?></span>
+<div class="at-cats" style="--n:<?php echo esc_attr((string) ($n > 4 ? 3 + ($n > 6 ? 1 : 0) : $n)); ?>">
+    <?php foreach ($tiles as $t) : ?>
+    <a class="at-cat" href="<?php echo esc_url($t['url']); ?>" data-reveal>
+        <?php echo $v->img((int) $t['image'], 'large', ['class' => 'at-cat__img', 'alt' => $t['label'], 'sizes' => '(max-width: 760px) 46vw, 25vw']); ?>
+        <span class="at-cat__cap">
+            <span class="at-cat__name"><?php echo esc_html($t['label']); ?></span>
+            <?php if ($t['note'] !== '') : ?><span class="at-cat__note"><?php echo esc_html($t['note']); ?></span><?php endif; ?>
+            <span class="at-cat__go">দেখুন <?php echo $v->icon('arrow'); ?></span>
         </span>
     </a>
     <?php endforeach; ?>

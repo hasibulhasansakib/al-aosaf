@@ -20,7 +20,7 @@ $extra .= '</div>';
 <div data-tabs>
     <?php $v->heading($d, $extra); ?>
     <?php foreach ($panels as $i => $p) : ?>
-    <div class="at-grid at-tabpanel<?php echo $i === 0 ? ' is-on' : ''; ?>" role="tabpanel" id="<?php echo $uid . '-p' . $i; ?>" aria-labelledby="<?php echo $uid . '-t' . $i; ?>"<?php echo $i ? ' hidden' : ''; ?>>
+    <div style="--cols:<?php echo esc_attr((string) $d['cols']); ?>" class="at-grid at-tabpanel<?php echo $i === 0 ? ' is-on' : ''; ?>" role="tabpanel" id="<?php echo $uid . '-p' . $i; ?>" aria-labelledby="<?php echo $uid . '-t' . $i; ?>"<?php echo $i ? ' hidden' : ''; ?>>
         <?php foreach ($p['products'] as $prod) { $v->card($prod); } ?>
     </div>
     <?php endforeach; ?>

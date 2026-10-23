@@ -25,7 +25,7 @@
     /* ---------- hero ---------- */
     function hero(el) {
         var slides = el.querySelectorAll('.at-hero__slide');
-        var bars = el.querySelectorAll('.at-hero__bar');
+        var bars = el.querySelectorAll('.at-hero__dot');
         var now = el.querySelector('[data-hero-now]');
         var n = slides.length, cur = 0, timer = null, paused = false;
         var ms = Math.max(3, parseFloat(el.getAttribute('data-interval')) || 6) * 1000;
@@ -48,12 +48,9 @@
             next.classList.add('is-on'); next.removeAttribute('aria-hidden');
             next.querySelectorAll('a').forEach(function (a) { a.removeAttribute('tabindex'); });
             next.querySelectorAll('img[loading="lazy"]').forEach(function (img) { img.loading = 'eager'; });
-            bars.forEach(function (b, k) {
-                b.classList.toggle('is-done', k < i);
-                b.classList.remove('is-on');
-            });
+            bars.forEach(function (b) { b.classList.remove('is-on'); b.removeAttribute('aria-current'); });
             void el.offsetWidth; // restart the progress animation
-            if (bars[i]) bars[i].classList.add('is-on');
+            if (bars[i]) { bars[i].classList.add('is-on'); bars[i].setAttribute('aria-current', 'true'); }
             if (now) now.textContent = bn(pad(i + 1));
             cur = i;
             schedule();
@@ -121,7 +118,7 @@
         // Drag with the mouse on desktop.
         var down = false, sx = 0, sl = 0, moved = false;
         track.addEventListener('pointerdown', function (e) {
-            if (e.pointerType !== 'mouse' || e.target.closest('button, .at-card__actions, .at-dock')) return;
+            if (e.pointerType !== 'mouse' || e.target.closest('button, .at-card__actions, .at-card__thumbs')) return;
             down = true; moved = false; sx = e.clientX; sl = track.scrollLeft;
         });
         window.addEventListener('pointermove', function (e) {
@@ -215,7 +212,7 @@
         function show(t) {
             var card = t.closest('[data-card]'), img = card && card.querySelector('[data-main]');
             if (!img || t.classList.contains('is-on')) return;
-            card.querySelectorAll('.at-dock__t').forEach(function (b) { b.classList.toggle('is-on', b === t); });
+            card.querySelectorAll('.at-card__thumb').forEach(function (b) { b.classList.toggle('is-on', b === t); });
             var src = t.getAttribute('data-src'), set = t.getAttribute('data-srcset');
             var pre = new Image();
             // "auto" sizes only works for images in the page; give the preloader the real card width.
@@ -231,17 +228,17 @@
             if (pre.decode) pre.decode().then(swap, swap); else pre.onload = swap;
         }
         root.addEventListener('click', function (e) {
-            var t = e.target.closest('.at-dock__t');
+            var t = e.target.closest('.at-card__thumb');
             if (t) { e.preventDefault(); show(t); }
         });
         if (!hover) return;
         root.addEventListener('mouseover', function (e) {
-            var t = e.target.closest('.at-dock__t');
+            var t = e.target.closest('.at-card__thumb');
             if (t) show(t);
         });
         root.querySelectorAll('[data-card]').forEach(function (card) {
             card.addEventListener('mouseleave', function () {
-                var first = card.querySelector('.at-dock__t');
+                var first = card.querySelector('.at-card__thumb');
                 if (first) show(first);
             });
         });

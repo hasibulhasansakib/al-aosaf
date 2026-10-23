@@ -113,6 +113,7 @@ class AtelierSchema {
                     'link'     => ['type' => 'text', 'label' => '"View all" text', 'default' => 'সব দেখুন'],
                     'link_url' => ['type' => 'url', 'label' => '"View all" link', 'default' => ''],
                     'layout'   => ['type' => 'select', 'label' => 'Layout', 'options' => ['carousel' => 'Carousel', 'grid' => 'Grid'], 'default' => 'carousel'],
+                    'cols'     => ['type' => 'select', 'label' => 'Cards per row (desktop)', 'options' => ['3' => '3', '4' => '4', '5' => '5'], 'default' => '4'],
                 ] + self::style(),
             ],
             'tabs' => [
@@ -126,6 +127,7 @@ class AtelierSchema {
                         'ids'    => ['type' => 'products', 'label' => 'Products (hand-picked)', 'default' => []],
                     ], 'default' => []],
                     'limit'   => ['type' => 'number', 'label' => 'Products per tab', 'default' => 8, 'min' => 2, 'max' => 16],
+                    'cols'    => ['type' => 'select', 'label' => 'Cards per row (desktop)', 'options' => ['3' => '3', '4' => '4', '5' => '5'], 'default' => '4'],
                     'instock' => ['type' => 'toggle', 'label' => 'Hide out-of-stock products', 'default' => 1],
                 ] + self::style(),
             ],
@@ -382,9 +384,9 @@ class AtelierSchema {
         $add('products', ['eyebrow' => 'এই সপ্তাহে', 'title' => 'নতুন <em>এসেছে</em>', 'source' => 'new', 'limit' => 10,
             'link' => 'সব দেখুন', 'link_url' => $shop]);
 
-        $add('banner', ['eyebrow' => 'ঘড়ির কালেকশন', 'title' => 'হাতে একটা ভালো <em>ঘড়ি থাকলে</em>',
-            'text' => 'পুরো লুকটাই বদলে যায়। SKMEI, Naviforce, Poedagar সহ বাছাই করা মডেল, অফিস থেকে দাওয়াত সবখানে চলে।',
-            'btn' => 'ঘড়িগুলো দেখুন', 'btn_url' => $catUrl(19) ?: $shop, 'image' => $img(1176), 'side' => 'right']);
+        $add('banner', ['eyebrow' => 'এমব্রয়ডারি কালেকশন', 'title' => 'চুপচাপ স্টাইল,<br><em>চোখে পড়ার মতো</em>',
+            'text' => 'সূক্ষ্ম এমব্রয়ডারি, মাপমতো কাটিং আর গাঢ় কালার। অফিস থেকে দাওয়াত, সব জায়গায় মানায়।',
+            'btn' => 'পাঞ্জাবিগুলো দেখুন', 'btn_url' => $catUrl(271) ?: $shop, 'image' => $img(1127) ?: $img(1176), 'side' => 'right', 'tone' => 'surface']);
 
         $tabs = [['label' => 'বেশি বিক্রি', 'source' => 'best', 'cats' => [], 'ids' => []]];
         if ($cat(271)) $tabs[] = ['label' => 'পাঞ্জাবি', 'source' => 'cat', 'cats' => [271], 'ids' => []];

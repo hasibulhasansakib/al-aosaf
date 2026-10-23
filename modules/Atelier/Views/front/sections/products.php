@@ -20,7 +20,7 @@ if ($carousel || $hasLink) {
 ?>
 <div data-rail-wrap>
     <?php $v->heading($d, $extra); ?>
-    <div class="<?php echo $carousel ? 'at-rail' : 'at-grid'; ?>"<?php echo $carousel ? ' data-rail' : ''; ?>>
+    <div class="<?php echo $carousel ? 'at-rail' : 'at-grid'; ?>" style="--cols:<?php echo esc_attr((string) $d['cols']); ?>"<?php echo $carousel ? ' data-rail' : ''; ?>>
         <?php foreach ($products as $p) { $v->card($p); } ?>
     </div>
     <?php if ($carousel) : ?><div class="at-progress" aria-hidden="true"><i data-rail-bar></i></div><?php endif; ?>
