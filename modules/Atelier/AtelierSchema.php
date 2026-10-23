@@ -343,19 +343,19 @@ class AtelierSchema {
 
         $add('hero', [
             'interval' => 6,
-            'note' => 'হাতে পেয়ে টাকা দিন',
+            'note' => '',
             'slides' => [
-                ['image' => $img(780) ?: $img(1126), 'image_m' => 0, 'eyebrow' => 'নতুন পাঞ্জাবি এসেছে',
-                    'title' => 'এবারের দাওয়াতে<br><em>পাঞ্জাবিটা হোক আলাদা</em>',
-                    'text' => 'ভালো কাপড়, হাতের কাজের এমব্রয়ডারি, মাপমতো ফিটিং। পছন্দ হলে অর্ডার দিন, হাতে পেয়ে দেখে তারপর টাকা।',
+                ['image' => $img(780) ?: $img(1126), 'image_m' => 0, 'eyebrow' => 'New Collection 2026',
+                    'title' => 'Crafted for<br><em>Every Celebration</em>',
+                    'text' => 'দাওয়াত, বিয়ে কিংবা জুমা। হাতের কাজের এমব্রয়ডারি আর মাপমতো ফিটিং, হাতে পেয়ে দেখে তারপর টাকা।',
                     'btn1' => 'পাঞ্জাবি দেখুন', 'btn1_url' => $catUrl(271) ?: $shop, 'btn2' => 'সাইজ জেনে নিন', 'btn2_url' => '#whatsapp'],
-                ['image' => $img(1000), 'image_m' => 0, 'eyebrow' => 'কালোর উপর জরির কাজ',
-                    'title' => 'কালো পাঞ্জাবি,<br><em>সোনালি নকশা</em>',
-                    'text' => 'বিয়ে, দাওয়াত কিংবা জুমার দিন, যেখানেই পরবেন সবার চোখে পড়বে।',
+                ['image' => $img(1000), 'image_m' => 0, 'eyebrow' => 'Signature Embroidery',
+                    'title' => 'Black, Touched<br><em>with Gold</em>',
+                    'text' => 'কালো পাঞ্জাবির উপর সোনালি জরির কাজ। যেখানেই পরবেন, সবার চোখে পড়বে।',
                     'btn1' => 'দেখে নিন', 'btn1_url' => $catUrl(271) ?: $shop, 'btn2' => '', 'btn2_url' => ''],
-                ['image' => $img(1119), 'image_m' => 0, 'eyebrow' => 'সিম্পল কিন্তু রুচিশীল',
-                    'title' => 'ব্রাউন শেডে<br><em>ক্লাসিক লুক</em>',
-                    'text' => 'যারা বেশি ঝকমকে কিছু চান না, কিন্তু মানুষ যেন একবার তাকায়। তাদের জন্যই এই ডিজাইন।',
+                ['image' => $img(1119), 'image_m' => 0, 'eyebrow' => 'Earth Tones',
+                    'title' => 'Classic in<br><em>Warm Brown</em>',
+                    'text' => 'সিম্পল কিন্তু রুচিশীল। যারা বেশি ঝকমকে কিছু চান না, কিন্তু মানুষ যেন একবার তাকায়।',
                     'btn1' => 'কালেকশন দেখুন', 'btn1_url' => $catUrl(271) ?: $shop, 'btn2' => '', 'btn2_url' => ''],
             ],
         ]);
@@ -368,7 +368,7 @@ class AtelierSchema {
         ]]);
 
         $tiles = [];
-        foreach ([[271, 'পাঞ্জাবি', 'দাওয়াত থেকে জুমা, সব দিনের জন্য'], [19, 'ঘড়ি', 'অফিস আর আড্ডায় মানানসই'], [20, 'Naviforce', 'জনপ্রিয় মডেলগুলো এক জায়গায়'], [175, 'ওয়ালেট', 'চামড়ার মানিব্যাগ']] as [$cid, $label, $note]) {
+        foreach ([[271, 'Panjabi', 'দাওয়াত থেকে জুমা'], [19, 'Watches', 'প্রতিদিনের স্টাইল'], [20, 'Naviforce', 'জনপ্রিয় মডেলগুলো'], [175, 'Wallets', 'চামড়ার মানিব্যাগ']] as [$cid, $label, $note]) {
             if ($cat($cid)) {
                 $tiles[] = ['cat' => $cid, 'label' => $label, 'note' => $note, 'image' => 0];
             }
@@ -379,38 +379,38 @@ class AtelierSchema {
                 $tiles[] = ['cat' => $cid, 'label' => '', 'note' => '', 'image' => 0];
             }
         }
-        $add('categories', ['eyebrow' => 'কালেকশন', 'title' => 'আজ কী <em>খুঁজছেন?</em>', 'items' => $tiles]);
+        $add('categories', ['eyebrow' => 'Collections', 'title' => 'Shop by <em>Category</em>', 'items' => $tiles]);
 
-        $add('products', ['eyebrow' => 'এই সপ্তাহে', 'title' => 'নতুন <em>এসেছে</em>', 'source' => 'new', 'limit' => 10,
+        $add('products', ['eyebrow' => 'Just In', 'title' => 'New <em>Arrivals</em>', 'source' => 'new', 'limit' => 10,
             'link' => 'সব দেখুন', 'link_url' => $shop]);
 
-        $add('banner', ['eyebrow' => 'এমব্রয়ডারি কালেকশন', 'title' => 'চুপচাপ স্টাইল,<br><em>চোখে পড়ার মতো</em>',
+        $add('banner', ['eyebrow' => 'The Embroidery Edit', 'title' => 'Quiet Style,<br><em>Loud Detail</em>',
             'text' => 'সূক্ষ্ম এমব্রয়ডারি, মাপমতো কাটিং আর গাঢ় কালার। অফিস থেকে দাওয়াত, সব জায়গায় মানায়।',
             'btn' => 'পাঞ্জাবিগুলো দেখুন', 'btn_url' => $catUrl(271) ?: $shop, 'image' => $img(1127) ?: $img(1176), 'side' => 'right', 'tone' => 'surface']);
 
-        $tabs = [['label' => 'বেশি বিক্রি', 'source' => 'best', 'cats' => [], 'ids' => []]];
-        if ($cat(271)) $tabs[] = ['label' => 'পাঞ্জাবি', 'source' => 'cat', 'cats' => [271], 'ids' => []];
-        if ($cat(19))  $tabs[] = ['label' => 'ঘড়ি', 'source' => 'cat', 'cats' => [19], 'ids' => []];
-        $add('tabs', ['eyebrow' => 'সবচেয়ে বেশি অর্ডার', 'title' => 'ক্রেতারা যেগুলো <em>বারবার নিচ্ছেন</em>', 'tabs' => $tabs, 'limit' => 8]);
+        $tabs = [['label' => 'Best Sellers', 'source' => 'best', 'cats' => [], 'ids' => []]];
+        if ($cat(271)) $tabs[] = ['label' => 'Panjabi', 'source' => 'cat', 'cats' => [271], 'ids' => []];
+        if ($cat(19))  $tabs[] = ['label' => 'Watches', 'source' => 'cat', 'cats' => [19], 'ids' => []];
+        $add('tabs', ['eyebrow' => 'Most Loved', 'title' => 'Best <em>Sellers</em>', 'text' => 'ক্রেতারা যেগুলো বারবার অর্ডার করছেন।', 'tabs' => $tabs, 'limit' => 8]);
 
-        $add('look', ['eyebrow' => 'কাছ থেকে দেখুন', 'title' => 'সেলাই আর <em>কাজের ডিটেইল</em>',
-            'text' => 'অনলাইনে কেনার আগে সবাই এটাই দেখতে চায়। ছবির নম্বরে চাপ দিন, কোন পাঞ্জাবি দেখে নিন।',
+        $add('look', ['eyebrow' => 'Up Close', 'title' => 'In the <em>Details</em>',
+            'text' => 'অনলাইনে কেনার আগে সবাই এটাই দেখতে চায়। ছবির নম্বরে চাপ দিন, কাজগুলো কাছ থেকে দেখুন।',
             'image' => $img(1045), 'spots' => $img(1045) ? [
                 ['x' => 47, 'y' => 28, 'product' => 1065, 'label' => 'কলারে সূক্ষ্ম এমব্রয়ডারি'],
                 ['x' => 56.5, 'y' => 50.5, 'product' => 1065, 'label' => 'নকশা করা মেটাল বোতাম'],
                 ['x' => 42, 'y' => 72, 'product' => 1065, 'label' => 'হাতার কাফে ফুলের কাজ'],
             ] : []]);
 
-        $add('reviews', ['eyebrow' => 'ক্রেতাদের কথা', 'title' => 'যারা নিয়েছেন, <em>তারা যা বললেন</em>', 'source' => 'both']);
+        $add('reviews', ['eyebrow' => 'Customer Love', 'title' => 'What Our <em>Customers Say</em>', 'source' => 'both']);
 
-        $add('faq', ['eyebrow' => 'প্রশ্ন ও উত্তর', 'title' => 'অনেকেই যা <em>জিজ্ঞেস করেন</em>', 'items' => [
+        $add('faq', ['eyebrow' => 'Help', 'title' => 'Questions, <em>Answered</em>', 'items' => [
             ['q' => 'অর্ডার কীভাবে করব?', 'a' => 'পছন্দের পণ্যে "অর্ডার করুন" চাপুন, তারপর নাম, মোবাইল নম্বর আর ঠিকানা দিন। আমরা ফোন দিয়ে অর্ডার কনফার্ম করে নেব।'],
             ['q' => 'আগে কি টাকা পাঠাতে হবে?', 'a' => 'না। ক্যাশ অন ডেলিভারি, পণ্য হাতে পেয়ে দেখে তারপর ডেলিভারি ম্যানকে টাকা দেবেন।'],
             ['q' => 'আমার সাইজ কোনটা হবে বুঝতে পারছি না', 'a' => 'অর্ডারের আগে ' . $phone . ' নম্বরে কল বা WhatsApp করুন। আপনার উচ্চতা আর সাধারণত কোন সাইজ পরেন জানালে আমরা মিলিয়ে বলে দেব।'],
             ['q' => 'ছবির সাথে আসল পণ্য মিলবে তো?', 'a' => 'ডেলিভারি ম্যানের সামনেই প্যাকেট খুলে মিলিয়ে নিতে পারবেন, তারপর টাকা দেবেন। অর্ডারের আগে আরও ছবি দেখতে চাইলে WhatsApp-এ জানান।'],
         ]]);
 
-        $add('whatsapp', ['eyebrow' => 'সরাসরি কথা বলুন', 'title' => 'সাইজ নিয়ে <em>দ্বিধায় আছেন?</em>',
+        $add('whatsapp', ['eyebrow' => 'Personal Help', 'title' => 'Not Sure About <em>Your Size?</em>',
             'text' => 'উচ্চতা আর সাধারণ মাপটা জানান, সঠিক সাইজটা আমরাই বলে দেব। কোনো পণ্যের আরও ছবি লাগলেও মেসেজ দিন।',
             'phone' => $phone, 'message' => 'আসসালামু আলাইকুম, alaosaf.com থেকে একটা পণ্যের ব্যাপারে জানতে চাই।', 'anchor' => 'whatsapp']);
 
