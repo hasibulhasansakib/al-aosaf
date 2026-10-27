@@ -401,6 +401,7 @@ class AtelierSchema {
                 ['x' => 56.5, 'y' => 50.5, 'product' => 1065, 'label' => 'নকশা করা মেটাল বোতাম'],
                 ['x' => 42, 'y' => 72, 'product' => 1065, 'label' => 'হাতার কাফে ফুলের কাজ'],
             ] : []]);
+        $sections[count($sections) - 1]['on'] = 0;
 
         $add('reviews', ['eyebrow' => 'Customer Love', 'title' => 'What Our <em>Customers Say</em>', 'source' => 'both']);
 
@@ -410,6 +411,7 @@ class AtelierSchema {
             ['q' => 'আমার সাইজ কোনটা হবে বুঝতে পারছি না', 'a' => 'অর্ডারের আগে ' . $phone . ' নম্বরে কল বা WhatsApp করুন। আপনার উচ্চতা আর সাধারণত কোন সাইজ পরেন জানালে আমরা মিলিয়ে বলে দেব।'],
             ['q' => 'ছবির সাথে আসল পণ্য মিলবে তো?', 'a' => 'ডেলিভারি ম্যানের সামনেই প্যাকেট খুলে মিলিয়ে নিতে পারবেন, তারপর টাকা দেবেন। অর্ডারের আগে আরও ছবি দেখতে চাইলে WhatsApp-এ জানান।'],
         ]]);
+        $sections[count($sections) - 1]['on'] = 0;
 
         $add('whatsapp', ['eyebrow' => 'Personal Help', 'title' => 'Not Sure About <em>Your Size?</em>',
             'text' => 'উচ্চতা আর সাধারণ মাপটা জানান, সঠিক সাইজটা আমরাই বলে দেব। কোনো পণ্যের আরও ছবি লাগলেও মেসেজ দিন।',
