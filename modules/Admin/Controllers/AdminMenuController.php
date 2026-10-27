@@ -14,6 +14,7 @@ class AdminMenuController extends AbstractController {
         'footer' => 'Footer',
         'homepage' => 'Homepage',
         'home-builder' => 'Homepage Builder',
+        'offers' => 'Offer Page',
         'single-product' => 'Single Product',
         'checkout' => 'Checkout',
         'pending-orders' => 'Pending Orders',

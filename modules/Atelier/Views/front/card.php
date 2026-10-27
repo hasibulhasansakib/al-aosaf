@@ -48,7 +48,7 @@ $inWishlist = class_exists('\Alaosaf\Modules\Wishlist\WishlistModule') && \Alaos
         <div class="at-card__tags">
             <?php if (!$instock) : ?><span class="at-tag at-tag--out">স্টক শেষ</span>
             <?php else : ?>
-                <?php if ($onSale) : ?><span class="at-tag at-tag--deal">অফার</span><?php endif; ?>
+                <?php if ($onSale) : ?><span class="at-tag at-tag--deal"><?php echo esc_html((string) apply_filters('aa_atelier_card_deal_label', 'অফার', $product)); ?></span><?php endif; ?>
                 <?php if ($isNew) : ?><span class="at-tag at-tag--new">নতুন</span><?php endif; ?>
             <?php endif; ?>
         </div>

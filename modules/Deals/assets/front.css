@@ -1,0 +1,38 @@
+/* Al Aosaf: Offer page (built on the Atelier styles) */
+.aa-offer { background: var(--at-bg); color: var(--at-text); }
+.aa-offer__hero { padding-block: clamp(56px, 8vw, 110px) clamp(28px, 4vw, 48px); overflow: hidden; }
+.aa-offer__hero::before {
+    content: ''; position: absolute; inset: -40% 10% auto; height: 120%; pointer-events: none;
+    background: radial-gradient(closest-side, rgba(201, 169, 110, .16), transparent 70%);
+}
+.aa-offer__head { position: relative; display: grid; justify-items: center; text-align: center; }
+.aa-offer__head .at-eyebrow::after { content: ''; width: 28px; height: 1px; background: var(--at-brass); }
+.aa-offer__head .at-lead { margin-inline: auto; }
+.aa-offer__facts { list-style: none; margin: 30px 0 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.aa-offer__facts li {
+    display: flex; align-items: baseline; gap: 8px; padding: 10px 18px; border: 1px solid var(--at-line-2); border-radius: 40px;
+    font-size: 14px; color: var(--at-muted);
+}
+.aa-offer__facts b { font: 600 20px/1 var(--at-serif); color: var(--at-brass); }
+.aa-offer__count { margin: 26px 0 0; justify-content: center; }
+
+.aa-offer__list { padding-top: 0; }
+.aa-offer__bar { margin-bottom: clamp(18px, 2.4vw, 30px); }
+.aa-offer__chips { justify-content: center; }
+.aa-offer__chips small { margin-left: 4px; font-size: 12px; opacity: .7; }
+.aa-offer__cell { display: flex; min-width: 0; }
+.aa-offer__cell > .at-card { width: 100%; }
+.aa-offer__cell[hidden] { display: none; }
+.aa-offer__cell.is-new .at-card { animation: at-rise .6s var(--at-ease) both; }
+.aa-offer__more { display: flex; justify-content: center; margin-top: clamp(26px, 3vw, 40px); }
+.aa-offer__empty { display: grid; justify-items: center; gap: 22px; text-align: center; padding: 40px 0 20px; color: var(--at-muted); font-size: 16px; }
+.aa-offer .at-preview-flag { position: sticky; top: 0; }
+
+@media (max-width: 760px) {
+    .aa-offer__facts li { padding: 8px 14px; font-size: 13px; }
+    .aa-offer__facts b { font-size: 17px; }
+    .aa-offer__bar { margin-inline: calc(var(--at-gut) * -1); }
+    .aa-offer__chips { flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; padding-inline: var(--at-gut); scrollbar-width: none; }
+    .aa-offer__chips::-webkit-scrollbar { display: none; }
+    .aa-offer__chips .at-tab { flex: none; padding: 8px 15px !important; font-size: 13px !important; }
+}

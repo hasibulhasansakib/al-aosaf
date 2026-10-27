@@ -1,0 +1,61 @@
+/* Al Aosaf: Offer Page (admin) */
+.dl-wrap { --dl-b: #dcdcde; --dl-acc: #9a7b45; max-width: 1400px; }
+.dl-top { position: sticky; top: 32px; z-index: 50; display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap;
+    background: #fff; border: 1px solid var(--dl-b); border-radius: 8px; padding: 12px 16px; margin: 0 0 16px; box-shadow: 0 4px 14px rgba(0,0,0,.05); }
+.dl-top__info { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.dl-top__info strong { font-size: 15px; }
+.dl-top__actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.dl-state { font-size: 12px; padding: 3px 10px; border-radius: 20px; background: #f0f0f1; color: #50575e; }
+.dl-state.is-live { background: #edfaef; color: #1a7f37; font-weight: 600; }
+.dl-state.is-wait { background: #fcf3e3; color: #8a5a00; }
+.dl-state.is-ended { background: #fcf0f1; color: #b32d2e; }
+.dl-cols { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 16px; align-items: start; }
+@media (max-width: 1100px) { .dl-cols { grid-template-columns: 1fr; } }
+
+.dl-card { background: #fff; border: 1px solid var(--dl-b); border-radius: 8px; padding: 16px 18px; margin-bottom: 16px; }
+.dl-card h2 { margin: 0 0 12px; font-size: 15px; }
+.dl-card h2 small { font-weight: 400; color: #646970; }
+.dl-card > .dl-f { margin-bottom: 12px; }
+.dl-card > .dl-switch { display: flex; margin: 8px 0; }
+.dl-hint { margin: 6px 0 12px; color: #646970; }
+.dl-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px 16px; }
+@media (max-width: 900px) { .dl-grid { grid-template-columns: 1fr; } }
+.dl-f--wide { grid-column: 1 / -1; }
+.dl-l { display: block; font-weight: 600; font-size: 12px; margin-bottom: 4px; color: #3c434a; }
+.dl-f input[type=text], .dl-f input[type=datetime-local], .dl-f select:not([multiple]) { width: 100%; max-width: 100%; }
+.dl-inline { display: flex; gap: 6px; align-items: center; }
+.dl-inline select { flex: 1; min-width: 0; }
+.dl-inline input { width: 80px !important; }
+.dl-unit { font-weight: 600; color: #50575e; }
+.dl-seg { display: inline-flex; border: 1px solid var(--dl-b); border-radius: 6px; overflow: hidden; }
+.dl-seg label { padding: 6px 14px; cursor: pointer; border-right: 1px solid var(--dl-b); }
+.dl-seg label:last-child { border-right: 0; }
+.dl-seg label:has(input:checked) { background: #fdf8ef; color: var(--dl-acc); font-weight: 600; }
+.dl-seg input { margin: 0 6px 0 0; }
+.dl-example { margin: 0; color: #1a7f37; font-style: italic; }
+.dl-example:empty { display: none; }
+
+.dl-rule { border: 1px solid var(--dl-b); border-left: 3px solid var(--dl-acc); border-radius: 8px; padding: 12px 14px 14px; margin-bottom: 12px; background: #fbfbfb; }
+.dl-rule.is-off { opacity: .6; border-left-color: #c3c4c7; }
+.dl-rule__bar { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+.dl-rule__drag { cursor: grab; color: #8c8f94; }
+.dl-rule__name { flex: 1; font-weight: 600; }
+.dl-rule__del { color: #b32d2e !important; text-decoration: none; }
+.dl-pill { font-size: 11px; padding: 2px 8px; border-radius: 20px; background: #fdf8ef; color: var(--dl-acc); white-space: nowrap; }
+.dl-ph { border: 2px dashed var(--dl-acc); border-radius: 8px; margin-bottom: 12px; background: #fdf8ef; visibility: visible !important; }
+.dl-empty { color: #646970; font-style: italic; }
+
+.dl-switch { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; font-size: 13px; }
+.dl-switch input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.dl-switch span { position: relative; width: 34px; height: 18px; border-radius: 18px; background: #c3c4c7; transition: background .2s; flex: none; }
+.dl-switch span::after { content: ''; position: absolute; top: 2px; left: 2px; width: 14px; height: 14px; border-radius: 50%; background: #fff; transition: transform .2s; }
+.dl-switch input:checked + span { background: var(--dl-acc); }
+.dl-switch input:checked + span::after { transform: translateX(16px); }
+.dl-switch input:focus-visible + span { outline: 2px solid #2271b1; outline-offset: 2px; }
+.dl-switch--big { font-weight: 600; }
+
+.dl-table td, .dl-table th { vertical-align: middle; }
+.dl-table tr.is-none td { color: #8c8f94; }
+.dl-off { font-size: 11px; color: #1a7f37; font-weight: 600; }
+.dl-out { color: #b32d2e; font-size: 12px; font-style: normal; }
+.dl-link { font-family: monospace; }
