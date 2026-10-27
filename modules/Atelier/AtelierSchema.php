@@ -366,6 +366,7 @@ class AtelierSchema {
             ['icon' => 'truck', 'title' => 'সারা দেশে ডেলিভারি', 'text' => 'ঢাকা ও ঢাকার বাইরে'],
             ['icon' => 'chat', 'title' => 'কল বা WhatsApp', 'text' => 'সাইজ নিয়ে সরাসরি কথা বলুন'],
         ]]);
+        $sections[count($sections) - 1]['on'] = 0; // kept in the builder, hidden by default
 
         $tiles = [];
         foreach ([[271, 'Panjabi', 'দাওয়াত থেকে জুমা'], [19, 'Watches', 'প্রতিদিনের স্টাইল'], [20, 'Naviforce', 'জনপ্রিয় মডেলগুলো'], [175, 'Wallets', 'চামড়ার মানিব্যাগ']] as [$cid, $label, $note]) {
