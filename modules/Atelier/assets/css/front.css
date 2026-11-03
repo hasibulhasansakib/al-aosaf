@@ -589,3 +589,23 @@ body.at-palette .aa-footer-bottom { background: #070605 !important; border-top: 
 body.at-palette .aa-footer-bottom .aa-copyright,
 body.at-palette .aa-footer-bottom * { color: var(--at-muted) !important; }
 body.at-palette .aa-back-to-top { background: var(--at-brass) !important; color: #14110C !important; border-radius: 50% !important; }
+
+/* ---------------------------------------------------------------- slim page footer (replaces the big site footer here) */
+body.at-page .aa-footer-wrapper { display: none !important; }
+.at-foot { padding: 0 var(--at-gut); }
+.at-foot__inner { max-width: var(--at-max); margin: 0 auto; padding: 26px 0 30px; border-top: 1px solid var(--at-line); }
+.at-foot__row { display: flex; align-items: center; justify-content: space-between; gap: 18px 28px; flex-wrap: wrap; }
+.at-foot__brand { font: 500 22px/1 var(--at-serif); letter-spacing: .14em; text-transform: uppercase; }
+.at-foot__links { display: flex; flex-wrap: wrap; gap: 6px 22px; font-size: 14px; }
+.at-foot__links a, .at-foot__contact a { color: var(--at-muted); transition: color .25s; }
+.at-foot__links a:hover, .at-foot__contact a:hover { color: inherit; }
+.at-foot__contact { display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: 14px; }
+.at-foot__contact a { display: inline-flex; align-items: center; gap: 7px; }
+.at-foot__contact .at-ico { width: 15px; height: 15px; }
+.at-foot__copy { margin-top: 18px !important; font-size: 12.5px; color: var(--at-muted); }
+.at-tone--sand .at-foot__brand { color: var(--at-ink); }
+@media (max-width: 760px) {
+    .at-foot__inner { padding: 24px 0 calc(28px + 64px); text-align: center; } /* room for the mobile bottom bar */
+    .at-foot__row { flex-direction: column; gap: 14px; }
+    .at-foot__links, .at-foot__contact { justify-content: center; }
+}

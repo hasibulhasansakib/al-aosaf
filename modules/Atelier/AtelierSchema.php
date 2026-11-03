@@ -340,6 +340,7 @@ class AtelierSchema {
             ['text' => 'অর্ডারের আগে সাইজ জেনে নিন: ' . $phone, 'url' => 'tel:+88' . $phone],
             ['text' => 'ডেলিভারি ম্যানের সামনেই পণ্য দেখে নিন', 'url' => ''],
         ]]);
+        $sections[count($sections) - 1]['on'] = 0;
 
         $add('hero', [
             'interval' => 6,

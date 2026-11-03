@@ -75,4 +75,5 @@ $showChips = $s['filters'] && count($cats) > 1;
             <?php endif; ?>
         <?php endif; ?>
     </section>
+    <?php $v->footer('dark'); ?>
 </div>

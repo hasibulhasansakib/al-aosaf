@@ -135,6 +135,12 @@ class AtelierView {
         include __DIR__ . '/Views/front/card.php';
     }
 
+    /** Slim footer in the tone of the last section (the big site footer is hidden on these pages). */
+    public function footer(string $tone = 'sand'): void {
+        $tone = in_array($tone, ['dark', 'surface', 'sand'], true) ? $tone : 'sand';
+        include __DIR__ . '/Views/front/footer.php';
+    }
+
     /** Category image: custom thumbnail, else the photo of its newest product. */
     public function categoryImage(int $termId): int {
         $thumb = (int) get_term_meta($termId, 'thumbnail_id', true);

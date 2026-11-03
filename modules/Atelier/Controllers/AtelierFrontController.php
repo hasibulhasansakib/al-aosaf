@@ -207,11 +207,13 @@ class AtelierFrontController {
                 continue;
             }
             $cls = 'at-sec at-sec--' . $sec['type'];
+            $lastTone = (string) ($d['tone'] ?? 'dark');
             if (isset($d['tone'])) $cls .= ' at-tone--' . $d['tone'];
             if (isset($d['space'])) $cls .= ' at-space--' . $d['space'];
             $id = !empty($d['anchor']) ? sanitize_title($d['anchor']) : 'at-' . $sec['id'];
             echo '<section class="' . esc_attr($cls) . '" id="' . esc_attr($id) . '">' . $inner . '</section>';
         }
+        $v->footer($lastTone ?? 'sand');
         echo '</div>';
         remove_filter('wc_get_price_decimals', $noDecimals, 99);
         return (string) ob_get_clean();
