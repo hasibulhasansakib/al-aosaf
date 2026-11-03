@@ -260,10 +260,11 @@ html:has(body.at-page), body.at-page { overflow-x: clip; }
 /* ---------------------------------------------------------------- tabs */
 .at-tabs { display: flex; gap: 6px; flex-wrap: wrap; }
 .at-tab {
-    padding: 10px 20px !important; border: 1px solid var(--at-line-2) !important; border-radius: 40px !important;
-    font-size: 14px !important; font-weight: 600; color: var(--at-muted) !important; transition: all .35s var(--at-ease);
+    padding: 10px 20px !important; border: 1px solid rgba(201, 169, 110, .38) !important; border-radius: 40px !important;
+    background: rgba(201, 169, 110, .08) !important;
+    font-size: 14px !important; font-weight: 600; color: #E4D6BC !important; transition: all .35s var(--at-ease);
 }
-.at-tab:hover { color: var(--at-text) !important; border-color: var(--at-brass) !important; }
+.at-tab:hover { color: var(--at-text) !important; border-color: var(--at-brass) !important; background: rgba(201, 169, 110, .16) !important; }
 .at-tab.is-on { background: var(--at-brass) !important; border-color: var(--at-brass) !important; color: #14110C !important; }
 .at-tabpanel[hidden] { display: none; }
 .at-tabpanel.is-on .at-card { animation: at-rise .7s var(--at-ease) both; }
@@ -538,37 +539,7 @@ html:has(body.at-page), body.at-page { overflow-x: clip; }
     .at-js .at-root [data-reveal="mask"]::after { display: none; }
 }
 
-/* ---------------------------------------------------------------- header + footer skin (this page only) */
-body.at-palette .aa-header-wrapper { background: var(--at-bg); font-family: var(--at-sans); }
-body.at-palette .aa-header-wrapper .aa-announcement-bar { display: none; } /* the page has its own Bangla ribbon */
-body.at-palette .aa-header-top-row,
-body.at-palette .aa-header-bottom-row,
-body.at-palette .aa-header-mobile { background: var(--at-bg) !important; color: var(--at-text) !important; border-bottom: 1px solid var(--at-line); }
-body.at-palette .aa-header-bottom-row { border-top: 0; }
-body.at-palette .aa-header-wrapper .aa-logo-text { color: var(--at-sand) !important; font-family: var(--at-serif); font-weight: 600; letter-spacing: .14em; }
-body.at-palette .aa-header-wrapper .aa-search-input { background: var(--at-s1) !important; border: 1px solid var(--at-line) !important; color: var(--at-text) !important; border-radius: 999px !important; }
-body.at-palette .aa-header-wrapper .aa-search-input::placeholder { color: var(--at-muted); }
-body.at-palette .aa-header-wrapper .aa-search-input:focus { border-color: var(--at-brass) !important; box-shadow: none !important; }
-body.at-palette .aa-header-wrapper .aa-search-btn { color: var(--at-muted) !important; }
-body.at-palette .aa-header-wrapper .aa-action-item,
-body.at-palette .aa-header-wrapper .aa-action-icon,
-body.at-palette .aa-header-wrapper .aa-mobile-toggle,
-body.at-palette .aa-header-wrapper .aa-mobile-search-toggle { color: var(--at-text) !important; }
-body.at-palette .aa-header-wrapper .aa-action-item:hover,
-body.at-palette .aa-header-wrapper .aa-action-item:hover .aa-action-icon { color: var(--at-brass) !important; }
-body.at-palette .aa-header-wrapper .aa-action-label { color: var(--at-muted) !important; }
-body.at-palette .aa-header-wrapper .aa-cart-badge { background: var(--at-brass) !important; color: #14110C !important; }
-body.at-palette .aa-desktop-menu > li > a,
-body.at-palette .aa-header-nav a { color: var(--at-text) !important; font-weight: 500; letter-spacing: .02em; }
-body.at-palette .aa-desktop-menu > li > a:hover,
-body.at-palette .aa-desktop-menu > li.current-menu-item > a { color: var(--at-brass) !important; }
-body.at-palette .aa-desktop-menu .sub-menu { background: var(--at-s1) !important; border: 1px solid var(--at-line) !important; box-shadow: 0 20px 50px rgba(0,0,0,.5) !important; }
-body.at-palette .aa-desktop-menu .sub-menu a { color: var(--at-text) !important; }
-body.at-palette .aa-desktop-menu .sub-menu a:hover { color: var(--at-brass) !important; background: var(--at-s2) !important; }
-body.at-palette .aa-mobile-bottom-bar { background: rgba(14, 13, 11, .96) !important; border-top: 1px solid var(--at-line) !important; box-shadow: none !important; backdrop-filter: blur(10px); }
-body.at-palette .aa-bottom-bar-item { color: var(--at-muted) !important; }
-body.at-palette .aa-bottom-bar-item.active { color: var(--at-brass) !important; }
-
+/* ---------------------------------------------------------------- footer skin (this page only; the header skin is in skin.css, loaded on every page) */
 body.at-palette .aa-footer-wrapper { background: #0A0908 !important; color: var(--at-muted) !important; border-top: 1px solid var(--at-line); font-family: var(--at-sans); }
 body.at-palette .aa-footer-wrapper .aa-logo-text { color: var(--at-sand) !important; font-family: var(--at-serif); letter-spacing: .14em; }
 body.at-palette .aa-footer-wrapper .aa-footer-desc,

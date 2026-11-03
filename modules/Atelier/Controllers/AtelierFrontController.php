@@ -20,6 +20,7 @@ class AtelierFrontController {
     public function init(): void {
         add_shortcode(self::SHORTCODE, [$this, 'render']);
         add_action('wp', [$this, 'detect']);
+        add_action('wp_enqueue_scripts', [$this, 'skin'], 30);
         foreach (['save_post_product', 'woocommerce_update_product', 'woocommerce_product_set_stock_status', 'woocommerce_variation_set_stock_status', 'comment_post', 'wp_set_comment_status'] as $hook) {
             add_action($hook, [AtelierView::class, 'flushCache']);
         }
@@ -72,6 +73,13 @@ class AtelierFrontController {
         if ($this->isPreview()) {
             nocache_headers();
         }
+    }
+
+    /** The homepage's dark header, on every page, so the header looks the same everywhere. */
+    public function skin(): void {
+        $base = AA_PLUGIN_DIR . 'modules/Atelier/assets/css/';
+        wp_enqueue_style('aa-atelier-fonts', 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@500;600&display=swap', [], null);
+        wp_enqueue_style('aa-atelier-skin', AA_PLUGIN_URL . 'modules/Atelier/assets/css/skin.css', ['aa-header-css'], (string) filemtime($base . 'skin.css'));
     }
 
     public function enqueue(): void {
