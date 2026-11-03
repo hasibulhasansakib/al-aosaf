@@ -139,6 +139,12 @@ class HeaderModule implements ModuleInterface {
         wp_enqueue_style('aa-header-css', AA_PLUGIN_URL . 'modules/Header/assets/css/header.css', [], time() . rand());
         wp_enqueue_style('aa-cart-drawer-css', AA_PLUGIN_URL . 'modules/Header/assets/css/cart-drawer.css', [], time() . rand());
         wp_enqueue_style('aa-sidebar-drawer-css', AA_PLUGIN_URL . 'modules/Header/assets/css/sidebar-drawer.css', [], time() . rand());
+        // The drawers are white: show the dark logo there when one is set (Appearance → Dark logo).
+        $brand = (array) get_option('aa_brand_settings', []);
+        $dark = esc_url_raw((string) ($brand['branding_dark_logo'] ?? ''));
+        if ($dark !== '') {
+            wp_add_inline_style('aa-sidebar-drawer-css', '.aa-offcanvas-logo .aa-logo-image,.aa-sidebar-logo .aa-logo-image{content:url("' . $dark . '")}');
+        }
         wp_enqueue_script('aa-header-js', AA_PLUGIN_URL . 'modules/Header/assets/js/header.js', ['jquery'], time() . rand(), true);
         
         wp_localize_script('aa-header-js', 'aa_header_ajax', [
